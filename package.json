@@ -17,11 +17,13 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^8.56.0",
+    "@tailwindcss/postcss": "^4.1.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "eslint": "^8.56.0",
     "eslint-config-next": "15.3.2",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5",
     "typescript-eslint": "^7.0.0"
   }
