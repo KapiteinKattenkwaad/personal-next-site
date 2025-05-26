@@ -42,7 +42,7 @@ export default function Home() {
           className="relative w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-2xl animation float"
         >
           <Image
-            src="/avatar.jpg"
+            src="/avatar.jpeg"
             alt="Max Stouten portrait"
             fill
             sizes="(max-width: 768px) 160px, 208px"
