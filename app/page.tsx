@@ -76,7 +76,9 @@ export default function Home() {
           className="mt-4 inline-flex items-center gap-2 rounded-full border border-teal-500 px-6 py-3 font-medium text-teal-400 hover:bg-teal-500 hover:text-neutral-950 transition-colors"
         >
           View my work
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+          <svg 
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
           </svg>
         </motion.a>
