@@ -7,25 +7,25 @@ const experiences = [
   {
     company: 'BugHerd',
     role: 'Software Developer',
-    period: 'Feb 2023 – May 2025',
+    period: 'Feb 2023 – May 2025',
     stack: 'React (TypeScript), Ruby on Rails, Node.js',
   },
   {
     company: 'Icon Agency',
     role: 'Front‑end Developer',
-    period: 'Jan 2022 – Feb 2023',
-    stack: 'Vue 3, Next.js, SCSS, JavaScript, WordPress',
+    period: 'Jan 2022 – Feb 2023',
+    stack: 'Vue 3, Next.js, SCSS, JavaScript, WordPress',
   },
   {
     company: 'Lunar',
     role: 'Front‑end Developer',
-    period: 'Feb 2021 – Dec 2021',
+    period: 'Feb 2021 – Dec 2021',
     stack: 'HTML, SCSS, JavaScript, Craft CMS',
   },
   {
     company: 'Liftov',
     role: 'Front‑end Web Developer',
-    period: 'Aug 2019 – Dec 2020',
+    period: 'Aug 2019 – Dec 2020',
     stack: 'HTML, CSS, JavaScript, Prismic',
   },
 ];
@@ -56,7 +56,7 @@ export default function Home() {
           transition={{ delay: 0.3, duration: 0.7 }}
           className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent"
         >
-          Hey, I’m <span className="inline-block origin-bottom-left inline-flex">Max Stouten  <span className="inline-block animate-wave">&nbsp; 👋</span></span>
+          Hey, I'm <span className="inline-block origin-bottom-left inline-flex">Max Stouten <span className="inline-block animate-wave text-4xl">&nbsp; 👋</span></span>
         </motion.h1>
 
         <motion.p
@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="w-full border-t border-neutral-800 py-10 text-center text-sm text-neutral-500">
-        © {new Date().getFullYear()} Max Stouten — Built with Next.js 15 &amp; Tailwind CSS
+        © {new Date().getFullYear()} Max Stouten — Built with Next.js 15 &amp; Tailwind CSS
       </footer>
     </main>
   );
