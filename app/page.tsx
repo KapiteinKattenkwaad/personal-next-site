@@ -56,7 +56,9 @@ export default function Home() {
           transition={{ delay: 0.3, duration: 0.7 }}
           className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent"
         >
-          Hey, I'm <span className="inline-block origin-bottom-left inline-flex">Max Stouten <span className="inline-block animate-wave text-4xl">&nbsp; 👋</span></span>
+          Hey, I'm <span className="inline-block origin-bottom-left inline-flex">Max Stouten 
+            {/* <span className="inline-block animate-wave text-4xl">&nbsp; 👋</span> */}
+            </span>
         </motion.h1>
 
         <motion.p
