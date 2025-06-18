@@ -52,7 +52,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.className} bg-neutral-950 text-neutral-100`}>{children}</body>
+      <body className={`${inter.className} bg-neutral-950 text-neutral-100 px-4`}>{children}</body>
     </html>
   );
 }
