@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -52,7 +53,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.className} bg-neutral-950 text-neutral-100 px-4`}>{children}</body>
+      <body className={`${inter.className} bg-neutral-950 text-neutral-100 px-4`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
