@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import { a, span } from 'framer-motion/client';
 
 const experiences = [
     {
@@ -34,7 +33,7 @@ const experiences = [
 export default function WorkExperience() {
     return (
 
-        <section id="experience" className="w-full max-w-3xl pb-24">
+        <section id="experience" className="w-full max-w-5xl mx-auto pb-24">
             <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -57,15 +56,15 @@ export default function WorkExperience() {
                     >
                         <h3 className="text-xl font-semibold">
                             {exp.role} &nbsp;
-                           
+
                             {
                                 exp.link ? (
-                                    <a className='relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-cyan-400 after:via-blue-500 after:to-purple-600' href={exp.link} target='_blank'>
+                                    <a className='relative text-cyan-400 border-b-2 border-transparent hover:border-cyan-400 transition-all duration-300' href={exp.link} target='_blank'>
                                         @ {exp.company}
                                     </a>
                                 )
                                     : <span>
-                                       @  {exp.company}
+                                        @  {exp.company}
                                     </span>
                             }
 
