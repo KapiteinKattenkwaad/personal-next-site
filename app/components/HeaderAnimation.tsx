@@ -373,7 +373,7 @@ const HeaderAnimation = () => {
                         Full-stack software developer focusing on React
                     </p>
                     <p className="text-xl text-gray-300 mb-8 text-center max-w-4xl leading-relaxed">
-                        (TypeScript) & Node.js. Currently crafting better bug-tracking experiences at <a className='hover:text-black transition-all duration-300 pointer-events-auto' href="https://bugherd.com/" target='_blank'><span className="text-cyan-400 font-semibold">BugHerd</span></a>.
+                        (TypeScript) & Node.js.
                     </p>
 
                     <a href="#projects" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300 pointer-events-auto flex items-center space-x-2 group">
