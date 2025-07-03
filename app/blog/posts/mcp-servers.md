@@ -1,9 +1,9 @@
 ---
-title: "My First Blog Post"
+title: "What is MCP?"
 date: "2024-06-01"
 cover: "/assets/bh-darkmode.png"
-intro: "This is the intro to my first blog post. It covers the basics of setting up a markdown-powered blog in Next.js."
-tags: ["frontend", "css"]
+intro: "MCP seems to be the new buzzword after AI. Let's find out what it is and how you can use it."
+tags: ["frontend", "AI"]
 order: 1
 ---
 
