@@ -35,7 +35,7 @@ export default function BlogList({ posts }: BlogListProps) {
     <>
       <div className="mb-8 flex flex-wrap gap-2">
         <button
-          className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all duration-200 ${selectedTag === null ? 'bg-cyan-400 text-black border-cyan-400' : 'bg-neutral-900 text-cyan-400 border-cyan-700 hover:bg-cyan-900'}`}
+          className={`px-3 py-1 cursor-pointer rounded-full text-xs font-semibold border transition-all duration-200 ${selectedTag === null ? 'bg-cyan-400 text-black border-cyan-400' : 'bg-neutral-900 text-cyan-400 border-cyan-700 hover:bg-cyan-900'}`}
           onClick={() => setSelectedTag(null)}
         >
           All
@@ -43,7 +43,7 @@ export default function BlogList({ posts }: BlogListProps) {
         {allTags.map((tag) => (
           <button
             key={tag}
-            className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all duration-200 ${selectedTag === tag ? 'bg-cyan-400 text-black border-cyan-400' : 'bg-neutral-900 text-cyan-400 border-cyan-700 hover:bg-cyan-900'}`}
+            className={`px-3 py-1 cursor-pointer rounded-full text-xs font-semibold border transition-all duration-200 ${selectedTag === tag ? 'bg-cyan-400 text-black border-cyan-400' : 'bg-neutral-900 text-cyan-400 border-cyan-700 hover:bg-cyan-900'}`}
             onClick={() => setSelectedTag(tag)}
           >
             {tag}

@@ -26,6 +26,30 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: any) {
+  const { slug } = params;
+  const filePath = path.join(process.cwd(), 'app/blog/posts', `${slug}.md`);
+  if (!fs.existsSync(filePath)) return {};
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const { data } = matter(fileContents);
+  return {
+    title: `${data.title} | Max Stouten`,
+    description: data.intro,
+    openGraph: {
+      title: data.title,
+      description: data.intro,
+      images: data.cover ? [{ url: data.cover }] : [],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: data.title,
+      description: data.intro,
+      images: data.cover ? [data.cover] : [],
+    },
+  };
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
   const { slug } = params;
