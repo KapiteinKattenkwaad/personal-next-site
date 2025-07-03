@@ -376,8 +376,8 @@ const HeaderAnimation = () => {
                         (TypeScript) & Node.js.
                     </p>
 
-                    <a href="#projects" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300 pointer-events-auto flex items-center space-x-2 group">
-                        <span>View my work</span>
+                    <a href="mailto:info@maxstouten.com?subject=Hi Max," target="_blank" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300 pointer-events-auto flex items-center space-x-2 group">
+                        <span>Get in touch</span>
                         <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                     </a>
                 </div>

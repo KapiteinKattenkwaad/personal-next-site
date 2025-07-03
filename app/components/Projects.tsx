@@ -4,6 +4,11 @@ import Image from 'next/image';
 
 const projects = [
   {
+    title: 'Onboarding | BugHerd',
+    description: 'Created a new modern onboarding flow for BugHerd with React and Ruby on Rails.',
+    image: '/assets/bh-onboarding.png',
+  },
+  {
     title: 'Dark mode | BugHerd',
     description: 'The whole BugHerd app and sidebar extensionfinally got dark mode. Oh, the css variables!',
     image: '/assets/bh-darkmode.png',
@@ -57,7 +62,7 @@ export default function Projects() {
         {projects.map((project, i) => (
           <motion.a
             key={project.title}
-            href={project.link}
+            href={project.link ?? '#'}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}
@@ -79,7 +84,10 @@ export default function Projects() {
                 {project.title}
               </h3>
               <p className="text-sm text-neutral-300 mb-2">{project.description}</p>
+              {project.link && (
+
               <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span>
+              )}
             </div>
           </motion.a>
         ))}
