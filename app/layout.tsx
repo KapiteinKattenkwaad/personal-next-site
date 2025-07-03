@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+// import Navigation from './components/Navigation';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -56,6 +57,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${inter.className} bg-neutral-950 text-neutral-100 px-4`}>
+        {/* <Navigation /> */}
         {children}
         <Analytics />
         <SpeedInsights />
