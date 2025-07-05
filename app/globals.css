@@ -28,3 +28,68 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h2 {
+  position: relative;
+  max-width: fit-content;
+    text-align: center;
+    margin-inline: auto;
+}
+
+h2::after {
+  background-color: var(--colorText);
+  content: "";
+  width: 100px;
+  height: 1px;
+  color: var(--colorText);
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.text-content p {
+  font-size: 1rem;
+  font-weight: light;
+}
+
+.text-content p:empty {
+  margin-block: 1.5rem;
+}
+
+.text-content h1,
+.text-content h2,
+.text-content h3,
+.text-content h4 {
+  color: var(--colorText);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+  font-family: var(--font-sans);
+}
+
+.text-content h1 {
+  font-size: 2.75rem;
+  line-height: 1.1;
+}
+
+.text-content h2 {
+  font-size: 2.25rem;
+}
+
+.text-content h3 {
+  font-size: 1.5rem;
+}
+
+.text-content h4 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.text-content ol,
+.text-content ul {
+  list-style: revert;
+  padding-left: 1.25rem;
+  margin-block: 1.5rem;
+}

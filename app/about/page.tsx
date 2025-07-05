@@ -37,10 +37,13 @@ export default function Page() {
                     transition={{ delay: 0.4, duration: 0.7 }}
                     className="text-lg text-neutral-300 mb-2 md:text-left text-center max-w-2xl mx-auto"
                 >
-                    I'm a passionate full-stack software developer focused on building beautiful, performant, and user-friendly web applications. I love working with <span className='text-cyan-400'>React</span>, <span className='text-cyan-400'>TypeScript</span>, and <span className='text-cyan-400'>Node.js</span>, and I'm always exploring new technologies and creative solutions.
+                    A Belgian full-stack software developer focused on building beautiful, performant, and user-friendly web applications. I love working with <span className='text-cyan-400'>React</span>, <span className='text-cyan-400'>TypeScript</span>, and <span className='text-cyan-400'>Node.js</span>, and I'm always exploring new technologies and creative solutions.
                     <br />
                     <br />
-                    When I'm not coding, you might find me experimenting with food hacks, enjoying the outdoors or reading a book (go and add me on <a href='https://www.goodreads.com/maximusreadimus' target='_blank' className='text-teal-500 underline '>Goodreads</a>).
+                    When I'm not coding, you might find me experimenting with 🍔 food hacks, enjoying the ⛰️ outdoors or reading a 📚 book (go and add me on <a href='https://www.goodreads.com/maximusreadimus' target='_blank' className='text-teal-500 underline '>Goodreads</a>).
+                    <br />
+                    <br />
+                    Or hit me up about beer, my favorite is a Belgian Ale called 😈 <a href="https://www.danmurphys.com.au/product/DM_138940/duvel-golden-belgian-ale-330ml" target='_blank'>Duvel</a> or 🍟 fries (they're called french fries because of the way they are cut, not because they are French).
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0 }}

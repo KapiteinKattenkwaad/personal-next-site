@@ -78,7 +78,7 @@ export default async function Page({ params }: any) {
           ))}
         </div>
       )}
-      <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="prose text-content prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: html }} />
     </article>
   );
 } 
