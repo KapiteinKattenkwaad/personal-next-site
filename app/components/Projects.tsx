@@ -10,21 +10,15 @@ const projects = [
   },
   {
     title: 'Dark mode | BugHerd',
-    description: 'The whole BugHerd app and sidebar extensionfinally got dark mode. Oh, the css variables!',
+    description: 'The whole BugHerd app and sidebar extension finally got dark mode. Oh, the css variables!',
     image: '/assets/bh-darkmode.png',
     link: 'https://updates.bugherd.com/release/esapQ-welcome-to-the-dark-side',
   },
   {
     title: 'iXpole | CMS',
-    description: 'A headless CMS with Vue.js and Prismic and a few teeny tiny animations, have a good peek.',
+    description: 'A headless CMS with Vue.js and Prismic and a few teeny tiny animations.',
     image: '/assets/ixpole.png',
     link: 'https://www.ixpole.com/',
-  },
-  {
-    title: 'Portfolio Website',
-    description: 'A custom website built with Next.js, Tailwind CSS, and Framer Motion, retrieving data from Contentful. The client was content',
-    image: '/assets/ally-portfolio.png',
-    link: 'https://ally-site-portfolio.vercel.app',
   },
   // {
   //   title: 'Blog Engine',
@@ -62,8 +56,8 @@ export default function Projects() {
         {projects.map((project, i) => (
           <motion.a
             key={project.title}
-            href={project.link ?? '#'}
-            target="_blank"
+            href={project.link ?? '#projects'}
+            target={project.link ? '_blank' : '_self'}
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +80,7 @@ export default function Projects() {
               <p className="text-sm text-neutral-300 mb-2">{project.description}</p>
               {project.link && (
 
-              <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span>
+                <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span>
               )}
             </div>
           </motion.a>

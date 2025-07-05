@@ -60,11 +60,11 @@ export default function WorkExperience() {
                             {
                                 exp.link ? (
                                     <a className='relative text-cyan-400 border-b-2 border-transparent hover:border-cyan-400 transition-all duration-300' href={exp.link} target='_blank'>
-                                        @ {exp.company}
+                                        at {exp.company}
                                     </a>
                                 )
                                     : <span>
-                                        @  {exp.company}
+                                        at  {exp.company}
                                     </span>
                             }
 

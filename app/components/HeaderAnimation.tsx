@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const HeaderAnimation = () => {
     const mountRef = useRef<HTMLDivElement>(null);
@@ -345,41 +346,127 @@ const HeaderAnimation = () => {
             <div ref={mountRef} className="absolute inset-0" />
 
             {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
-                    <div className="text-cyan-400 text-xl font-mono animate-pulse">
-                        Initializing...
-                    </div>
-                </div>
+                <div className="h-full w-full bg-gray-900"></div>
             )}
 
             <div className="absolute inset-0 pointer-events-none">
-                <div className="flex flex-col items-center justify-center h-full text-white">
-                    {/* Profile image  */}
-                    <div className="w-48 h-48 rounded-full mb-8 bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
-                        <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <img
-                                src="/avatar.jpeg"
-                                alt="Max Stouten portrait"
-                                className="w-full h-full object-cover"
-                            />
+                <div className="flex flex-col justify-center h-full max-w-3xl text-white px-4 mx-auto">
+                    {/* Avatar/logo on top for mobile, after name for desktop */}
+                    <div className="flex flex-col md:flex-row md:items-center md:gap-4 mb-2 items-start">
+                        {/* Mobile: avatar above, Desktop: avatar after name */}
+                        <div className="md:hidden w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1 flex items-center justify-center mb-4">
+                            <div className="relative w-full h-full rounded-full overflow-hidden">
+                                <img
+                                    src="/avatar.jpeg"
+                                    alt="Max Stouten portrait"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
+                        <motion.h1
+                            initial={{ opacity: 0, y: -30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }}
+                            className="text-3xl flex items-center  text-white text-left"
+                        >
+                            <motion.span
+                                className="text-3xl md:text-4xl mr-2 md:mr-4 my-auto"
+                                initial={{ rotate: 0 }}
+                                animate={{ rotate: [0, 20, -10, 20, -5, 0] }}
+                                transition={{ delay: 1, duration: 1.2, times: [0, 0.2, 0.4, 0.6, 0.8, 1] }}
+                            >
+                                👋
+                            </motion.span>
+                                Hi! I'm
+                            <span className="px-2 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 flex items-center">
+                                Max Stouten
+                                <span className="hidden md:inline-block ml-4 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
+                                    <span className="relative w-full h-full rounded-full overflow-hidden block">
+                                        <img
+                                            src="/avatar.jpeg"
+                                            alt="Max Stouten portrait"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </span>
+                                </span>
+                            </span>
+                        </motion.h1>
                     </div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.7 }}
+                        className="text-lg md:text-3xl mb-6 text-gray-300 text-left max-w-3xl"
+                    >
+                        A full-stack software developer looking for new problems to solve and creative solutions to solve them with.
+                    </motion.h2>
 
-
-                    <h1 className="text-5xl font-bold mb-4 text-transparent text-center bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-                        Hey, I'm Max Stouten
-                    </h1>
-                    <p className="text-xl text-gray-300 mb-2 text-center max-w-4xl leading-relaxed">
-                        Full-stack software developer focusing on React
-                    </p>
-                    <p className="text-xl text-gray-300 mb-8 text-center max-w-4xl leading-relaxed">
-                        (TypeScript) & Node.js.
-                    </p>
-
-                    <a href="mailto:info@maxstouten.com?subject=Hi Max," target="_blank" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300 pointer-events-auto flex items-center space-x-2 group">
-                        <span>Get in touch</span>
-                        <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </a>
+                    {/* Pills for programming languages with framer-motion staggered animation */}
+                    <motion.div
+                        className="flex flex-row flex-wrap gap-3 mb-10 items-start"
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ delay: 0.5 }}
+                        variants={{
+                            visible: { transition: { staggerChildren: 0.18 } },
+                        }}
+                    >
+                        {/* React pill */}
+                        <motion.span
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5 }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#20232a] font-semibold text-base shadow-md border border-[#61dafb]"
+                        >
+                            <img src="/assets/react_logo.svg" alt="React" className="w-5 h-5" style={{ filter: "invert(1)" }} /> React
+                        </motion.span>
+                        {/* TypeScript pill */}
+                        <motion.span
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5 }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#007acc] font-semibold text-base shadow-md border border-[#007acc] text-white"
+                        >
+                            <img src="/assets/typescript_logo.svg" alt="TypeScript" className="w-5 h-5" style={{ filter: "invert(1)" }} /> TypeScript
+                        </motion.span>
+                        {/* Node.js pill */}
+                        <motion.span
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5 }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#30330c] font-semibold text-base shadow-md border border-[#8cc84b] "
+                        >
+                            <img src="/assets/node_logo.svg" alt="Node.js" className="w-5 h-5" style={{ filter: "invert(1)" }} /> Node.js
+                        </motion.span>
+                        {/* Ruby on Rails pill */}
+                        <motion.span
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5 }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#c00] font-semibold text-base shadow-md border border-[#c00] text-white"
+                        >
+                            <img src="/assets/rails_logo.svg" alt="Ruby on Rails" className="w-5 h-5" style={{ filter: "invert(1)" }} /> Ruby on Rails
+                        </motion.span>
+                        {/* Vue.js pill */}
+                        <motion.span
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5 }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#31475E] font-semibold text-base shadow-md border border-[#40B47F] text-white"
+                        >
+                            <img src="/assets/vuejs_logo.svg" alt="Vue.js" className="w-5 h-5" style={{ filter: "invert(1)" }} /> Vue.js
+                        </motion.span>
+                    </motion.div>
                 </div>
             </div>
         </div>
