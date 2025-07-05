@@ -83,7 +83,7 @@ export default function Projects() {
             className="col-span-1 md:col-start-3 flex flex-row-reverse md:flex-row items-stretch bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] hover:shadow-xl transition-transform duration-300 cursor-pointer"
             style={{ minHeight: 170 }}
           >
-            <div className="relative w-2/5 h-32 md:h-auto">
+            <div className="relative w-2/5 md:h-auto">
               <img
                 src={project.image}
                 alt={project.title}

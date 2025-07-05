@@ -10,17 +10,21 @@ const HeaderAnimation = () => {
                     {/* Avatar/logo on top for mobile, after name for desktop */}
                     <div className="flex flex-col md:flex-row md:items-center md:gap-4 mb-2 items-start">
                         {/* Mobile: avatar above, Desktop: avatar after name */}
-                        <div className="md:hidden w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1 flex items-center justify-center mb-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: -30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }}
+                            className="md:hidden w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1 flex items-center justify-center mb-4">
                             <div className="relative w-full h-full rounded-full overflow-hidden">
                                 <Image
-                                    width={20}
-                                    height={20}
+                                    width={120}
+                                    height={120}
                                     src="/avatar.jpeg"
                                     alt="Max Stouten portrait"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                         <motion.h1
                             initial={{ opacity: 0, y: -30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -41,8 +45,8 @@ const HeaderAnimation = () => {
                                 <span className="hidden md:inline-block ml-4 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
                                     <span className="relative w-full h-full rounded-full overflow-hidden block">
                                         <Image
-                                            width={20}
-                                            height={20}
+                                            width={120}
+                                            height={120}
                                             src="/avatar.jpeg"
                                             alt="Max Stouten portrait"
                                             className="w-full h-full object-cover"
