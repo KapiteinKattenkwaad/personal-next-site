@@ -42,7 +42,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="w-full max-w-5xl mx-auto pb-24">
+    <section id="projects" className="gradient-background w-full max-w-5xl mx-auto pb-24">
       <motion.h2
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -52,38 +52,52 @@ export default function Projects() {
       >
         Some of my projects
       </motion.h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
-          <motion.a
+      <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-8">
+        {/* First project: big overlay card */}
+        <a
+          href={projects[0].link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative col-span-1 md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden flex items-end min-h-[350px] md:min-h-[500px] shadow-lg group"
+          style={{ minHeight: 350 }}
+        >
+          <img
+            src={projects[0].image}
+            alt={projects[0].title}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+          />
+          <div className="relative z-10 w-full p-8 bg-gradient-to-t from-black/80 to-black/10">
+            <h3 className="text-2xl font-bold text-white mb-2">{projects[0].title}</h3>
+            {/* <p className="text-base text-neutral-200 mb-2">{projects[0].description}</p> */}
+            {/* <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span> */}
+          </div>
+        </a>
+
+        {/* Next two projects: stacked in col 3 */}
+        {projects.slice(1, 3).map((project) => (
+          <a
             key={project.title}
-            href={project.link ?? '#projects'}
-            target={project.link ? '_blank' : '_self'}
+            href={project.link}
+            target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
-            className="group block bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 cursor-pointer"
+            className="col-span-1 md:col-start-3 flex flex-row-reverse md:flex-row items-stretch bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] hover:shadow-xl transition-transform duration-300 cursor-pointer"
+            style={{ minHeight: 170 }}
           >
-            <div className="relative w-full h-48">
-              <Image
+            <div className="relative w-2/5 h-32 md:h-auto">
+              <img
                 src={project.image}
                 alt={project.title}
-                fill
-                className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300"
               />
             </div>
-            <div className="p-5">
+            <div className="flex-1 p-5 flex flex-col justify-center">
               <h3 className="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
                 {project.title}
               </h3>
-              <p className="text-sm text-neutral-300 mb-2">{project.description}</p>
-              {project.link && (
-
-                <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span>
-              )}
+              {/* <p className="text-sm text-neutral-300 mb-2">{project.description}</p> */}
+              {/* <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span> */}
             </div>
-          </motion.a>
+          </a>
         ))}
       </div>
     </section>

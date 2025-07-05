@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="flex justify-center items-center gap-6 py-6 border-t border-neutral-800">
                 <Socials />
             </div>
-            <footer className="w-full border-t border-neutral-800 py-6 text-center text-sm text-neutral-500">
+            <footer className="w-full border-t border-neutral-800 py-6 text-center text-sm text-neutral-300">
                 © {new Date().getFullYear()} Max Stouten — Built with Next.js 15 &amp; Tailwind CSS
             </footer>
         </div>

@@ -39,6 +39,48 @@ body {
   margin-block: 1.5rem;
 }
 
+/* .test {
+
+  color: #9810f;
+  color: #155dfc
+} */
+
+body {
+  background: linear-gradient(120deg, #0a0a0a 0%, #11192A 40%, #232347 70%, #0a0a0a 100%);
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  animation: gradient-animation 16s ease-in-out infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+    filter: brightness(1);
+  }
+  25% {
+    background-position: 50% 100%;
+    background-size: 210% 210%;
+    filter: brightness(1.03);
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 200% 200%;
+    filter: brightness(1.06);
+  }
+  75% {
+    background-position: 50% 0%;
+    background-size: 190% 190%;
+    filter: brightness(1.03);
+  }
+  100% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+    filter: brightness(1);
+  }
+}
+
 .text-content h1,
 .text-content h2,
 .text-content h3,
