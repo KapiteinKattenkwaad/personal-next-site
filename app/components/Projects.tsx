@@ -21,13 +21,13 @@ const projects = [
     link: 'https://www.ixpole.com/',
   },
   {
-    title: 'Marketing Site | Adpo',
+    title: 'Marketing Site | Lunar',
     description: 'For this logistics company I made a website with Craft CMS and Tailwind to create a nice flow.',
     image: '/assets/adpo-screenshot.png',
     link: 'https://www.adpo.com/en',
   },
   {
-    title: 'Vue.js app | ASD',
+    title: 'Vue.js app | Icon Agency',
     description: 'To make the timeline for the 75th anniversary more interactive and smooth, I\'ve used a Vue 3 application inside of the Drupal theme. It uses Pinia for state management.',
     image: '/assets/asd-screenshot.png',
     link: 'https://www.asd.gov.au/about/history/timeline/',
@@ -77,7 +77,9 @@ export default function Projects() {
           className="glass relative col-span-1 md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden flex items-end min-h-[350px] md:min-h-[500px] shadow-lg group"
           style={{ minHeight: 350 }}
         >
-          <img
+          <Image
+            width={200}
+            height={200}
             src={projects[0].image}
             alt={projects[0].title}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
@@ -123,8 +125,8 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
-        {/* Next two projects: stacked in col 2 */}
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-8 mt-8">
+      {/* Next two projects: stacked in col 2 */}
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-8 mt-8">
         {projects.slice(3, 5).map((project, idx) => (
           <motion.div
             key={project.title}
@@ -157,7 +159,7 @@ export default function Projects() {
             </a>
           </motion.div>
         ))}
-        </motion.div>
+      </motion.div>
     </section>
   );
 } 

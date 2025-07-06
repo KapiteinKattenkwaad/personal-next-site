@@ -29,7 +29,7 @@ const HeaderAnimation = () => {
                             initial={{ opacity: 0, y: -30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7 }}
-                            className="text-3xl flex items-center  text-white text-left"
+                            className="text-3xl flex items-center flex-wrap  text-white text-left"
                         >
                             <motion.span
                                 className="text-3xl md:text-4xl mr-2 md:mr-4 my-auto"
@@ -39,21 +39,20 @@ const HeaderAnimation = () => {
                             >
                                 👋
                             </motion.span>
-                            Hi! I'm
-                            <span className="px-2 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 flex items-center">
-                                Max Stouten
-                                <span className="hidden md:inline-block ml-4 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
-                                    <span className="relative w-full h-full rounded-full overflow-hidden block">
-                                        <Image
-                                            width={120}
-                                            height={120}
-                                            src="/avatar.jpeg"
-                                            alt="Max Stouten portrait"
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </span>
+                            Hi! I'm Max Stouten
+
+                            <span className="hidden md:inline-block ml-4 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
+                                <span className="relative w-full h-full rounded-full overflow-hidden block">
+                                    <Image
+                                        width={200}
+                                        height={200}
+                                        src="/avatar.jpeg"
+                                        alt="Max Stouten portrait"
+                                        className="w-full h-full object-cover"
+                                    />
                                 </span>
                             </span>
+
                         </motion.h1>
                     </div>
                     <motion.h2

@@ -18,15 +18,16 @@ const experiences = [
     },
     {
         company: 'Lunar',
+        link: 'https://lunar.be/',
         role: 'Front‑end Developer',
         period: 'Feb 2021 – Dec 2021',
-        stack: 'HTML, SCSS, JavaScript, Craft CMS',
+        stack: 'HTML, SCSS, JavaScript, Vue.js, Craft CMS',
     },
     {
         company: 'Liftov',
         role: 'Front‑end Web Developer',
         period: 'Aug 2019 – Dec 2020',
-        stack: 'HTML, CSS, JavaScript, Prismic',
+        stack: 'HTML, CSS, JavaScript, Vue.js, Prismic',
     },
 ];
 
@@ -58,9 +59,9 @@ export default function WorkExperience() {
                         {/* Main content */}
                         <div className="flex-1">
                             <h3 className="text-xl font-semibold">
-                                {exp.role} &nbsp;
+                                {exp.role} {' '}
                                 {exp.link ? (
-                                    <a className='relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-300 border-b-2 border-transparent hover:border-b-blue-500 transition-all' href={exp.link} target='_blank'>
+                                    <a className='relative border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all' href={exp.link} target='_blank'>
                                         at {exp.company}
                                     </a>
                                 ) : <span>at {exp.company}</span>}
