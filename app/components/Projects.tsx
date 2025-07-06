@@ -15,10 +15,22 @@ const projects = [
     link: 'https://updates.bugherd.com/release/esapQ-welcome-to-the-dark-side',
   },
   {
-    title: 'iXpole | CMS',
+    title: 'CMS | Liftov',
     description: 'A headless CMS with Vue.js and Prismic and a few teeny tiny animations.',
     image: '/assets/ixpole.png',
     link: 'https://www.ixpole.com/',
+  },
+  {
+    title: 'Marketing Site | Adpo',
+    description: 'For this logistics company I made a website with Craft CMS and Tailwind to create a nice flow.',
+    image: '/assets/adpo-screenshot.png',
+    link: 'https://www.adpo.com/en',
+  },
+  {
+    title: 'Vue.js app | ASD',
+    description: 'To make the timeline for the 75th anniversary more interactive and smooth, I\'ve used a Vue 3 application inside of the Drupal theme. It uses Pinia for state management.',
+    image: '/assets/asd-screenshot.png',
+    link: 'https://www.asd.gov.au/about/history/timeline/',
   },
   // {
   //   title: 'Blog Engine',
@@ -54,11 +66,15 @@ export default function Projects() {
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-8">
         {/* First project: big overlay card */}
-        <a
+        <motion.a
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           href={projects[0].link}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative col-span-1 md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden flex items-end min-h-[350px] md:min-h-[500px] shadow-lg group"
+          className="glass relative col-span-1 md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden flex items-end min-h-[350px] md:min-h-[500px] shadow-lg group"
           style={{ minHeight: 350 }}
         >
           <img
@@ -71,35 +87,77 @@ export default function Projects() {
             {/* <p className="text-base text-neutral-200 mb-2">{projects[0].description}</p> */}
             {/* <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span> */}
           </div>
-        </a>
+        </motion.a>
 
         {/* Next two projects: stacked in col 3 */}
-        {projects.slice(1, 3).map((project) => (
-          <a
+        {projects.slice(1, 3).map((project, idx) => (
+          <motion.div
             key={project.title}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="col-span-1 md:col-start-3 flex flex-row-reverse md:flex-row items-stretch bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] hover:shadow-xl transition-transform duration-300 cursor-pointer"
-            style={{ minHeight: 170 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 + idx * 0.15, duration: 0.7 }}
           >
-            <div className="relative w-2/5 md:h-auto">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300"
-              />
-            </div>
-            <div className="flex-1 p-5 flex flex-col justify-center">
-              <h3 className="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-                {project.title}
-              </h3>
-              {/* <p className="text-sm text-neutral-300 mb-2">{project.description}</p> */}
-              {/* <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span> */}
-            </div>
-          </a>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass col-span-1 md:col-start-3 flex flex-row-reverse md:flex-row items-stretch bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] hover:shadow-xl transition-transform duration-300 cursor-pointer"
+              style={{ minHeight: 170 }}
+            >
+              <div className="relative w-2/5 md:h-auto">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300"
+                />
+              </div>
+              <div className="flex-1 p-5 flex flex-col justify-center">
+                <h3 className="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-300">
+                  {project.title}
+                </h3>
+                {/* <p className="text-sm text-neutral-300 mb-2">{project.description}</p> */}
+                {/* <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span> */}
+              </div>
+            </a>
+          </motion.div>
         ))}
       </div>
+        {/* Next two projects: stacked in col 2 */}
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-8 mt-8">
+        {projects.slice(3, 5).map((project, idx) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 + idx * 0.15, duration: 0.7 }}
+          >
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass col-span-1 md:col-start-3 flex flex-row-reverse md:flex-row items-stretch bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] hover:shadow-xl transition-transform duration-300 cursor-pointer"
+              style={{ minHeight: 170 }}
+            >
+              <div className="relative w-2/5 md:h-auto">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300"
+                />
+              </div>
+              <div className="flex-1 p-5 flex flex-col justify-center">
+                <h3 className="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-300">
+                  {project.title}
+                </h3>
+                {/* <p className="text-sm text-neutral-300 mb-2">{project.description}</p> */}
+                {/* <span className="inline-block text-cyan-400 font-medium group-hover:underline transition-all duration-300">View Project →</span> */}
+              </div>
+            </a>
+          </motion.div>
+        ))}
+        </motion.div>
     </section>
   );
 } 

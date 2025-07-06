@@ -39,14 +39,35 @@ body {
   margin-block: 1.5rem;
 }
 
-/* .test {
+.glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(2px) saturate(180%);
+  /* border: 0.4px solid rgba(255, 255, 255, 0.8); */
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+              inset 0 4px 20px rgba(255, 255, 255, 0.3);
+}
 
-  color: #9810f;
-  color: #155dfc
-} */
+.glass::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  backdrop-filter: blur(1px);
+  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+              inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+  opacity: 0.85;
+  z-index: -1;
+  filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+}
 
 body {
-  background: linear-gradient(120deg, #0a0a0a 0%, #11192A 40%, #232347 70%, #0a0a0a 100%);
+  background: linear-gradient(120deg, #0a0a0a 0%, #11192A 40%, #111728 70%, #2B7FFF 100%);
   background-size: 200% 200%;
   background-attachment: fixed;
   animation: gradient-animation 16s ease-in-out infinite;
