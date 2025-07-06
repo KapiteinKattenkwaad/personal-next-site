@@ -31,25 +31,7 @@ const projects = [
     description: 'To make the timeline for the 75th anniversary more interactive and smooth, I\'ve used a Vue 3 application inside of the Drupal theme. It uses Pinia for state management.',
     image: '/assets/asd-screenshot.png',
     link: 'https://www.asd.gov.au/about/history/timeline/',
-  },
-  // {
-  //   title: 'Blog Engine',
-  //   description: 'A markdown-powered blog engine with custom CMS and live preview.',
-  //   image: '/avatar.jpeg',
-  //   link: 'https://example.com/blog',
-  // },
-  // {
-  //   title: 'Weather Dashboard',
-  //   description: 'A real-time weather dashboard using OpenWeatherMap API and Chart.js.',
-  //   image: '/avatar.jpeg',
-  //   link: 'https://example.com/weather',
-  // },
-  // {
-  //   title: 'Chat Application',
-  //   description: 'A real-time chat app with WebSocket and user authentication.',
-  //   image: '/avatar.jpeg',
-  //   link: 'https://example.com/chat',
-  // },
+  }
 ];
 
 export default function Projects() {
