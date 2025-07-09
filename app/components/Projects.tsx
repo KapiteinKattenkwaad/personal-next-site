@@ -60,8 +60,8 @@ export default function Projects() {
           style={{ minHeight: 350 }}
         >
           <Image
-            width={200}
-            height={200}
+            width={600}
+            height={600}
             src={projects[0].image}
             alt={projects[0].title}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
@@ -90,7 +90,9 @@ export default function Projects() {
               style={{ minHeight: 170 }}
             >
               <div className="relative w-2/5 md:h-auto">
-                <img
+                <Image
+                  height={200}
+                  width={200}
                   src={project.image}
                   alt={project.title}
                   className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300"
@@ -125,7 +127,9 @@ export default function Projects() {
               style={{ minHeight: 170 }}
             >
               <div className="relative w-2/5 md:h-auto">
-                <img
+                <Image
+                  height={200}
+                  width={200}
                   src={project.image}
                   alt={project.title}
                   className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300"
