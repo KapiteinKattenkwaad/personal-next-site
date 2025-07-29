@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Max Stouten – Software Developer',
-  description: 'Portfolio of Max Stouten, a full‑stack TypeScript developer specialised in React, Node.js & Ruby on Rails.',
+  description: 'Portfolio of Max Stouten, a full-stack software engineer specialised in Typescript, React, Node.js, Ruby on Rails and more.',
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

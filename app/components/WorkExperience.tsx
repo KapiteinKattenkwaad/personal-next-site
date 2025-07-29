@@ -59,12 +59,13 @@ export default function WorkExperience() {
                         {/* Main content */}
                         <div className="flex-1">
                             <h3 className="text-xl font-semibold">
-                                {exp.role} {' '}
+                                {exp.role} {' '} at {' '}
                                 {exp.link ? (
+                                    
                                     <a className='relative border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all' href={exp.link} target='_blank'>
-                                        at {exp.company}
+                                        {exp.company}
                                     </a>
-                                ) : <span>at {exp.company}</span>}
+                                ) : <span>{exp.company}</span>}
                             </h3>
                             <p className="text-sm text-neutral-200 mb-1 md:mb-0">Stack: {exp.stack}</p>
                         </div>

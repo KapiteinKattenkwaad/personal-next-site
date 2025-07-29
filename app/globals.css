@@ -12,7 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -23,6 +22,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background: linear-gradient(120deg, #0a0a0a 0%, #11192A 40%, #111728 70%, #2B7FFF 100%);
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  animation: gradient-animation 16s ease-in-out infinite;
+  overflow-x: hidden;
+}
 
 .text-content p {
   font-size: 1rem;
@@ -37,7 +43,6 @@ body {
   position: relative;
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(2px) saturate(180%);
-  /* border: 0.4px solid rgba(255, 255, 255, 0.8); */
   border-radius: 2rem;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
               inset 0 4px 20px rgba(255, 255, 255, 0.3);
@@ -58,14 +63,6 @@ body {
   opacity: 0.85;
   z-index: -1;
   filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
-}
-
-body {
-  background: linear-gradient(120deg, #0a0a0a 0%, #11192A 40%, #111728 70%, #2B7FFF 100%);
-  background-size: 200% 200%;
-  background-attachment: fixed;
-  animation: gradient-animation 16s ease-in-out infinite;
-  overflow-x: hidden;
 }
 
 @keyframes gradient-animation {
