@@ -83,6 +83,16 @@ export default function Projects() {
             transition={{ delay: 0.2 + idx * 0.15, duration: 0.7 }}
           >
             <a
+              // @ts-ignore
+              onClick={() => {
+                // @ts-ignore
+                window.gtag &&
+                 // @ts-ignore
+                  window.gtag('event', 'click', {
+                    event_category: 'Projects click',
+                    event_label: project.title,
+                  });
+              }}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"

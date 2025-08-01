@@ -50,7 +50,7 @@ I can confidently say that Max is a valuable asset. Max is a keeper.`,
                 He’s very responsive, always willing to help out, and just a really solid team player. He cares about building things that actually work for users, not just ticking boxes.`,
 
     }
-   
+
 ];
 
 const formatDescription = (text: string) => {
@@ -86,7 +86,11 @@ export default function Recommendations() {
             >
                 What colleagues say about me
                 <span className='hidden md:inline-flex mt-4 md:ml-auto md:mt-auto text-base relative border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'>
-                    <a href="https://www.linkedin.com/in/max-stouten/details/recommendations" target='_blank'>
+
+                    <a
+                        // @ts-ignore
+                        onclick="gtag('event', 'click', {'event_category': 'Link click', 'event_label': 'LinkedIn recommendations click'});"
+                        href="https://www.linkedin.com/in/max-stouten/details/recommendations" target='_blank'>
                         More LinkedIn recommendations
                     </a>
                 </span>
@@ -155,6 +159,8 @@ export default function Recommendations() {
 
                                 <div className="mt-4">
                                     <a
+                                        // @ts-ignore
+                                        onclick="gtag('event', 'click', {'event_category': 'View profile click', 'event_label': 'View LinkedIn profile click'});"
                                         href={rec.link}
                                         target='_blank'
                                         rel="noopener noreferrer"

@@ -134,18 +134,23 @@ const HeaderAnimation = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: .5, duration: .7 }}
                     >
+
                         <a
+                            // @ts-ignore
+                            onclick="gtag('event', 'click', {'event_category': 'Header click', 'event_label': 'Resume download click'});"
                             className='inline-block border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
                             target="_blank" href="https://drive.google.com/file/d/1PKCyKiFAW8ceMIS9IYG6CPIjR8w7V6Cq/view?usp=sharing">
                             See resume
                         </a>
                         <motion.span
-                         initial={{ opacity: 0, y: 30 }}
-                         animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8, duration: .8  }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8, duration: .8 }}
                         >
 
                             <a
+                                // @ts-ignore
+                                onclick="gtag('event', 'click', {'event_category': 'Header click', 'event_label': 'Email me click'});"
                                 className='inline-block border-b-2 ml-6 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
                                 target="_blank" href="mailto:maxstouten@gmail.com">
                                 Email me
