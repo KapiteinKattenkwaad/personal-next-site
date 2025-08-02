@@ -2,6 +2,16 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
+import { sendGaEvent } from '../utils/gtag';
+
+const handleClick = (value: string) => {
+        sendGaEvent({
+          action: 'recommendations_click',
+          category: 'user_engagement',
+          label: value,
+          value: 1,
+        });
+      };
 
 const recommendations = [
     {
@@ -89,7 +99,7 @@ export default function Recommendations() {
 
                     <a
                         // @ts-ignore
-                        onclick="gtag('event', 'click', {'event_category': 'Link click', 'event_label': 'LinkedIn recommendations click'});"
+                        onClick={handleClick('recommendations click')}
                         href="https://www.linkedin.com/in/max-stouten/details/recommendations" target='_blank'>
                         More LinkedIn recommendations
                     </a>
@@ -160,7 +170,7 @@ export default function Recommendations() {
                                 <div className="mt-4">
                                     <a
                                         // @ts-ignore
-                                        onclick="gtag('event', 'click', {'event_category': 'View profile click', 'event_label': 'View LinkedIn profile click'});"
+                                        onClick={handleClick('view linkedin profile click')}
                                         href={rec.link}
                                         target='_blank'
                                         rel="noopener noreferrer"

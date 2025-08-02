@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import { sendGaEvent } from '../utils/gtag';
 
 const handleClick = (value: string) => {
-        sendGaEvent({
-          action: 'header_click',
-          category: 'engagement',
-          label: value,
-          value: 1,
-        });
-      };
+    sendGaEvent({
+        action: 'header_click',
+        category: 'user_engagement',
+        label: value,
+        value: 1,
+    });
+};
 
 const HeaderAnimation = () => {
     return (
