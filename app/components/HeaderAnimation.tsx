@@ -1,6 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { sendGaEvent } from '../utils/gtag';
+
+const handleClick = (value: string) => {
+        sendGaEvent({
+          action: 'header_click',
+          category: 'engagement',
+          label: value,
+          value: 1,
+        });
+      };
 
 const HeaderAnimation = () => {
     return (
@@ -137,7 +147,7 @@ const HeaderAnimation = () => {
 
                         <a
                             // @ts-ignore
-                            onclick="gtag('event', 'click', {'event_category': 'Header click', 'event_label': 'Resume download click'});"
+                            onClick={handleClick('resume download click')}
                             className='inline-block border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
                             target="_blank" href="https://drive.google.com/file/d/1PKCyKiFAW8ceMIS9IYG6CPIjR8w7V6Cq/view?usp=sharing">
                             See resume
@@ -150,7 +160,7 @@ const HeaderAnimation = () => {
 
                             <a
                                 // @ts-ignore
-                                onclick="gtag('event', 'click', {'event_category': 'Header click', 'event_label': 'Email me click'});"
+                                onClick={handleClick('Email me')}
                                 className='inline-block border-b-2 ml-6 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
                                 target="_blank" href="mailto:maxstouten@gmail.com">
                                 Email me
