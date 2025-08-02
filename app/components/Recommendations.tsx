@@ -5,13 +5,13 @@ import Image from 'next/image';
 import { sendGaEvent } from '../utils/gtag';
 
 const handleClick = (value: string) => {
-        sendGaEvent({
-          action: 'recommendations_click',
-          category: 'user_engagement',
-          label: value,
-          value: 1,
-        });
-      };
+    sendGaEvent({
+        action: 'recommendations_click',
+        category: 'user_engagement',
+        label: value,
+        value: 1,
+    });
+};
 
 const recommendations = [
     {
@@ -189,6 +189,8 @@ export default function Recommendations() {
                 })}
             </div>
             <a
+                //@ts-ignore
+                onClick={handleClick('more linkedin recommendations click')}
                 className='inline-block md:hidden mt-8 md:ml-auto md:mt-auto text-base relative border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
                 href="https://www.linkedin.com/in/max-stouten/details/recommendations" target='_blank'>
                 More LinkedIn recommendations
