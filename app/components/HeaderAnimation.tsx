@@ -128,7 +128,7 @@ const HeaderAnimation = () => {
                             <Image width={10} height={10} src="/assets/rails_logo.svg" alt="Ruby on Rails" className="w-5 h-5" style={{ filter: "invert(1)" }} /> Ruby on Rails
                         </motion.span>
                         {/* Vue.js pill */}
-                        <motion.span
+                        {/* <motion.span
                             variants={{
                                 hidden: { opacity: 0, y: 20 },
                                 visible: { opacity: 1, y: 0 },
@@ -137,36 +137,9 @@ const HeaderAnimation = () => {
                             className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#31475E] font-semibold text-base shadow-md border border-[#40B47F] text-white"
                         >
                             <Image width={10} height={10} src="/assets/vuejs_logo.svg" alt="Vue.js" className="w-5 h-5" style={{ filter: "invert(1)" }} /> Vue.js
-                        </motion.span>
+                        </motion.span> */}
                     </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: .5, duration: .7 }}
-                    >
 
-                        <a
-                            // @ts-ignore
-                            onClick={handleClick('resume download click')}
-                            className='inline-block border-b-2 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
-                            target="_blank" href="https://drive.google.com/file/d/1PKCyKiFAW8ceMIS9IYG6CPIjR8w7V6Cq/view?usp=sharing">
-                            See resume
-                        </a>
-                        <motion.span
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8, duration: .8 }}
-                        >
-
-                            <a
-                                // @ts-ignore
-                                onClick={handleClick('Email me')}
-                                className='inline-block border-b-2 ml-6 border-white hover:border-b-blue-500 hover:text-blue-500 transition-all'
-                                target="_blank" href="mailto:maxstouten@gmail.com">
-                                Email me
-                            </a>
-                        </motion.span>
-                    </motion.div>
                 </div>
             </div>
         </div>
